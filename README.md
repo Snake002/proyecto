@@ -104,5 +104,5 @@ while True:
         apple.pop(0) 
         apple.append((random.randint(0, 29), (random.randint(0, 29))))   
     main_clock.tick(10) 
-    pygame.display.flip() 
+    pygame.display.flip()
 
