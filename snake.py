@@ -9,7 +9,7 @@ clear = window.copy()
 sizepoint = 10
 dir = 1
 snake = [(15, 15)]
-apple = [(5, 5)]
+manzana = [(5, 5)]
 main_clock = pygame.time.Clock()
 while True:
     for eventos in pygame.event.get():
@@ -30,7 +30,7 @@ while True:
     for node in snake:
         x, y = node
         pygame.draw.rect(window, (255, 255, 255), ((x * sizepoint, y * sizepoint), (sizepoint, sizepoint)), 1)
-    x, y = apple[0]
+    x, y = manzana[0]
     pygame.draw.rect(window, (255, 0, 0), ((x * sizepoint, y * sizepoint), (sizepoint, sizepoint)), 1)
     if dir == 1:
         x, y = snake[0]
@@ -56,10 +56,10 @@ while True:
         print("Has perdido :(")
         pygame.quit()
         os.sys.exit(0)
-    if not snake[0] in apple:
+    if not snake[0] in manzana:
         snake.pop(len(snake) - 1)
     else:
-        apple.pop(0)
-        apple.append((random.randint(0, 29), (random.randint(0, 29))))
+        manzana.pop(0)
+        manzana.append((random.randint(0, 29), (random.randint(0, 29))))
     main_clock.tick(10)
     pygame.display.flip()
